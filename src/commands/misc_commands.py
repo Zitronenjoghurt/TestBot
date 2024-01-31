@@ -6,7 +6,8 @@ class MiscCommands(commands.Cog):
 
     @commands.hybrid_command()
     async def ping(self, ctx):
-        await ctx.send('Pong!')
+        latency_ms = round(self.bot.latency * 1000)
+        await ctx.send(f"**Pong!** {latency_ms}ms\nI'll just be staying online this night as a test!")
 
 async def setup(bot):
     await bot.add_cog(MiscCommands(bot))
